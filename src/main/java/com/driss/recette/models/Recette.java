@@ -21,8 +21,9 @@ public class Recette {
     private String nom;
     private String description;
     private String auteur;
-    @DBRef
-    private List<Etape> etape = new ArrayList<>();
+
+
+    private List<Etape> etapes = new ArrayList<>();
     private List<Ingredient> ingredients = new ArrayList<>();
 
 }
