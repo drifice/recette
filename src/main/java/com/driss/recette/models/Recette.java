@@ -21,6 +21,7 @@ public class Recette {
     private String nom;
     private String description;
     private String auteur;
+    private Integer quantiter;
 
 
     private List<Etape> etapes = new ArrayList<>();

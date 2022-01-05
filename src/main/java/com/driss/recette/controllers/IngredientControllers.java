@@ -1,19 +1,20 @@
 package com.driss.recette.controllers;
 
+import com.driss.recette.models.Ingredient;
 import com.driss.recette.models.Recette;
+import com.driss.recette.services.IngredientService;
 import com.driss.recette.services.RecetteService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @RestController
-@RequestMapping("recette")
+@RequestMapping("ingredients")
 @CrossOrigin
-public class RecetteController {
-    private RecetteService service;
+public class IngredientControllers {
+    private IngredientService service;
 
-    public RecetteController(RecetteService service) {
-        this.service = service;
+    public IngredientControllers(RecetteService service) {
+        service = service;
     }
 
     @GetMapping("")
@@ -22,17 +23,17 @@ public class RecetteController {
     }
 
     @PostMapping("")
-    public  Recette insert(@RequestBody  Recette entity) {
+    public  Ingredient insert(@RequestBody Ingredient entity) {
         return service.insert(entity);
     }
 
     @PutMapping("")
-    public  Recette save(@RequestBody  Recette entity) {
+    public  Ingredient save(@RequestBody  Ingredient entity) {
         return service.save(entity);
     }
 
     @GetMapping("{id}")
-    public  Recette findById(@PathVariable String id) {
+    public  Ingredient findById(@PathVariable String id) {
         return service.findById(id);
     }
 
